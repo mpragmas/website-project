@@ -5,7 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
   </head>
+  <script>
+    const loadComponents = (id, url) => {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+        });
+    };
+
+    window.onload = () => {
+      loadComponents("navBar", "src/section/navBar.html");
+      loadComponents("header", "src/section/header.html");
+      loadComponents("hero", "src/section/hero.html");
+      loadComponents("contact", "src/section/contact.html");
+      loadComponents("footer", "src/section/footer.html");
+    };
+  </script>
   <body>
-    <h1 class="text-5xl font-bold underline">Hello world!</h1>
+    <div id="navBar"></div>
+    <div id="header"></div>
+    <div id="hero"></div>
+    <div id="contact"></div>
+    <div id="footer"></div>
   </body>
 </html>
