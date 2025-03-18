@@ -6,15 +6,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-amber-400: oklch(0.828 0.189 84.429);
     --color-gray-800: oklch(0.278 0.033 256.848);
-    --color-white: #fff;
-    --spacing: 0.25rem;
-    --text-5xl: 3rem;
-    --text-5xl--line-height: 1;
     --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 700;
     --tracking-normal: 0em;
     --default-font-family: var(--font-sans);
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
@@ -178,17 +171,8 @@
   .absolute {
     position: absolute;
   }
-  .fixed {
-    position: fixed;
-  }
   .relative {
     position: relative;
-  }
-  .sticky {
-    position: sticky;
-  }
-  .top-0 {
-    top: calc(var(--spacing) * 0);
   }
   .top-\[15\.854rem\] {
     top: 15.854rem;
@@ -229,12 +213,6 @@
   .left-\[19\.4375rem\] {
     left: 19.4375rem;
   }
-  .left-\[20rem\] {
-    left: 20rem;
-  }
-  .left-\[30rem\] {
-    left: 30rem;
-  }
   .left-\[31\.8125rem\] {
     left: 31.8125rem;
   }
@@ -250,14 +228,8 @@
   .left-\[69\.1875rem\] {
     left: 69.1875rem;
   }
-  .table {
-    display: table;
-  }
   .h-\[8\.375rem\] {
     height: 8.375rem;
-  }
-  .h-\[8rem\] {
-    height: 8rem;
   }
   .h-\[18\.75rem\] {
     height: 18.75rem;
@@ -280,29 +252,11 @@
   .h-\[48\.53125rem\] {
     height: 48.53125rem;
   }
-  .h-\[54\.59\] {
-    height: 54.59;
-  }
-  .h-\[54\.593\] {
-    height: 54.593;
-  }
   .h-\[54\.593rem\] {
     height: 54.593rem;
   }
-  .h-\[54\] {
-    height: 54;
-  }
   .h-\[64\.208rem\] {
     height: 64.208rem;
-  }
-  .h-full {
-    height: 100%;
-  }
-  .w-2 {
-    width: calc(var(--spacing) * 2);
-  }
-  .w-\[12rem\] {
-    width: 12rem;
   }
   .w-\[13rem\] {
     width: 13rem;
@@ -334,67 +288,19 @@
   .w-\[94\.625rem\] {
     width: 94.625rem;
   }
-  .w-full {
-    width: 100%;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .bg-\[\#EFECEA\] {
     background-color: #EFECEA;
   }
-  .bg-amber-400 {
-    background-color: var(--color-amber-400);
-  }
-  .text-center {
-    text-align: center;
-  }
-  .font-\[Outfit\] {
-    font-family: Outfit;
-  }
-  .font-\[outfit\] {
-    font-family: outfit;
-  }
-  .text-5xl {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
-  }
   .text-\[3rem\] {
     font-size: 3rem;
-  }
-  .text-\[48px\] {
-    font-size: 48px;
-  }
-  .leading-\[1\.1\] {
-    --tw-leading: 1.1;
-    line-height: 1.1;
   }
   .leading-\[1\] {
     --tw-leading: 1;
     line-height: 1;
   }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
-  }
-  .font-medium {
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-  }
   .font-normal {
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
-  }
-  .tracking-\[0\] {
-    --tw-tracking: 0;
-    letter-spacing: 0;
   }
   .tracking-normal {
     --tw-tracking: var(--tracking-normal);
@@ -403,21 +309,17 @@
   .text-gray-800 {
     color: var(--color-gray-800);
   }
-  .text-white {
-    color: var(--color-white);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
+@layer components {
+  .custom-text {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 1.1;
+    letter-spacing: 0;
+    text-align: center;
+    color: white;
+  }
 }
 @property --tw-leading {
   syntax: "*";
@@ -430,9 +332,4 @@
 @property --tw-tracking {
   syntax: "*";
   inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
