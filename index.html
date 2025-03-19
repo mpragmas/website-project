@@ -6,16 +6,23 @@
     <link href="./src/output.css" rel="stylesheet" />
   </head>
   <script>
-    const loadComponents = (id, url) => {
+    const loadComponents = (id, url, callback) => {
       fetch(url)
         .then((response) => response.text())
         .then((html) => {
           document.getElementById(id).innerHTML = html;
+          if (callback) callback();
         });
     };
 
     window.onload = () => {
-      loadComponents("navBar", "src/section/navBar.html");
+      loadComponents("navBar", "src/section/navBar.html", () => {
+        const nav = document.querySelectorAll(".nav-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document.querySelector(".nav-ui").classList.toggle("hidden");
+          });
+        });
+      });
       loadComponents("header", "src/section/header.html");
       loadComponents("hero", "src/section/hero.html");
       loadComponents("contact", "src/section/contact.html");
