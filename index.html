@@ -17,9 +17,12 @@
 
     window.onload = () => {
       loadComponents("navBar", "src/section/navBar.html", () => {
-        const nav = document.querySelectorAll(".nav-btn").forEach((btn) => {
+        document.querySelectorAll(".nav-btn").forEach((btn) => {
           btn.addEventListener("click", () => {
             document.querySelector(".nav-ui").classList.toggle("hidden");
+
+            document.querySelector(".open").classList.toggle("hidden");
+            document.querySelector(".close").classList.toggle("hidden");
           });
         });
       });
