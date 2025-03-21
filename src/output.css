@@ -203,6 +203,9 @@
   .relative {
     position: relative;
   }
+  .sticky {
+    position: sticky;
+  }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
@@ -683,6 +686,9 @@
   .h-\[60vh\] {
     height: 60vh;
   }
+  .h-\[134px\] {
+    height: 134px;
+  }
   .h-auto {
     height: auto;
   }
@@ -881,6 +887,9 @@
   .w-\[116px\] {
     width: 116px;
   }
+  .w-\[208px\] {
+    width: 208px;
+  }
   .w-\[px\] {
     width: px;
   }
@@ -1051,6 +1060,9 @@
   }
   .pt-32 {
     padding-top: calc(var(--spacing) * 32);
+  }
+  .pb-24 {
+    padding-bottom: calc(var(--spacing) * 24);
   }
   .text-center {
     text-align: center;
