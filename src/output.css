@@ -27,8 +27,9 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
-    --color-privacy-primary: #016e33;
+    --color-privacy-primary: #00672e;
     --font-outfit: "Outfit", sans-serif;
+    --color-gg: rgba(239, 236, 234, 1);
   }
 }
 @layer base {
@@ -197,6 +198,12 @@
   .list-disc {
     list-style-type: disc;
   }
+  .bg-gg {
+    background-color: var(--color-gg);
+  }
+  .px-\[19px\] {
+    padding-inline: 19px;
+  }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
   }
@@ -236,6 +243,16 @@
   }
   .uppercase {
     text-transform: uppercase;
+  }
+  .tablet\:px-\[58px\] {
+    @media (width >= 834px) {
+      padding-inline: 58px;
+    }
+  }
+  .desktop\:px-\[201px\] {
+    @media (width >= 1512px) {
+      padding-inline: 201px;
+    }
   }
 }
 @property --tw-font-weight {
