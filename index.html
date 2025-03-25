@@ -20,7 +20,6 @@
         document.querySelectorAll(".nav-btn").forEach((btn) => {
           btn.addEventListener("click", () => {
             document.querySelector(".nav-ui").classList.toggle("hidden");
-
             document.querySelector(".open").classList.toggle("hidden");
             document.querySelector(".close").classList.toggle("hidden");
           });
@@ -32,7 +31,7 @@
       loadComponents("footer", "src/section/footer.html");
     };
   </script>
-  <body>
+  <body class="bg-[#EFECEA]">
     <div id="navBar"></div>
     <div id="header"></div>
     <div id="hero"></div>
