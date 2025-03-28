@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#EFECEA]">
+    <style>
+      /* Custom Tailwind Configuration */
+      .font-outfit {
+        font-family: 'Outfit', sans-serif;
+      }
+    </style>
+    <!-- Hero Section -->
+    <section class="relative">
+        <!-- Image Container -->
+        <div class="relative xl:hidden">
+            <img src="/website-project/img/Group 1 (2).svg" class="h-auto w-full" alt="">
+        </div>
+
+        <!-- Text Container -->
+        <div class="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-[16.375rem] xl:w-[30.5625rem] px-6 md:hidden ">
+            <p class="font-outfit font-medium  text-[24px] xl:text-[48px] leading-[1.1] tracking-[0] text-center text-white">
+              We help you set focus and gain impact. By adding to the conversation, not to the noise.
+            </p>
+        </div>
+        
+        <!-- Larger screens -->
+
+        <!-- Image Container -->
+        <div class="relative hidden xl:block">
+            <img src="/website-project/img/Group 1 (1).svg" class="h-auto w-full" alt="">
+        </div>
+
+        <!-- Text Container -->
+        <div class="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-[16.375rem] xl:w-[30.5625rem] px-6 hidden xl:block ">
+            <p class="font-outfit font-medium  text-[24px] xl:text-[48px] leading-[1.1] tracking-[0] text-center text-white">
+              We help you set focus and gain impact. By adding to the conversation, not to the noise.
+            </p>
+        </div>
+    </section>
+
+
+    <div class="px-9 md:px-16 xl:px-48 pb-24 ">
+        <p class="font-outfit text-[24px] leading-[1.1] tracking-[0] xl:text-[48px]">We are a Berlin-based communications agency specialising in helping companies and brands find their voice and position themselves. Whether it's brand building, identity sharpening, or communication strategy, we bring a fresh perspective to established structures, develop tailor-made communication solutions, and ensure that messages resonate. With over a decade of experience,
+             we have honed our skills in giving brands their unmistakable identity and making them visible in the long term.</p>
+    </div>
+    <div class=" sticky top-0">
+        <img src="img/Vector 6.png" alt="" class="mx-auto">
+      </div>
+  </body>
+</html>
