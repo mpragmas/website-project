@@ -4,29 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <script>
-    const loadComponents = (id, url) => {
+    const loadComponents = (id, url, callback) => {
       fetch(url)
         .then((response) => response.text())
         .then((html) => {
           document.getElementById(id).innerHTML = html;
+          if (callback) callback();
         });
     };
 
     window.onload = () => {
-      loadComponents("navBar", "src/section/navBar.html");
+      loadComponents("navBar", "src/section/navBar.html", () => {
+        document.querySelectorAll(".nav-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document.querySelector(".nav-ui").classList.toggle("hidden");
+            document.querySelector(".open").classList.toggle("hidden");
+            document.querySelector(".close").classList.toggle("hidden");
+          });
+        });
+      });
       loadComponents("header", "src/section/header.html");
       loadComponents("hero", "src/section/hero.html");
       loadComponents("contact", "src/section/contact.html");
       loadComponents("footer", "src/section/footer.html");
+      loadComponents("private", "src/section/private.html");
     };
   </script>
-  <body>
+  <body class="bg-gg">
     <div id="navBar"></div>
     <div id="header"></div>
     <div id="hero"></div>
     <div id="contact"></div>
-    <div id="footer"></div>
+    <div id="private"></div>
+    <div id="footer" class="translate-y-[50px] p-7"></div>
   </body>
 </html>
