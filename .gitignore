@@ -1,2 +1,2 @@
 node_modules/
-src/output.css
+console.log('Application started');src/output.css
