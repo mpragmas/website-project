@@ -5,10 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="../../src/output.css" rel="stylesheet" />
+    <script>
+      const loadComponents = (id, url, callback) => {
+        fetch(url)
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById(id).innerHTML = html;
+            if (callback) callback();
+          });
+      };
+
+      window.onload = () => {
+        loadComponents("navBar", "./navBar.html", () => {
+          document.querySelectorAll(".nav-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              document.querySelector(".nav-ui").classList.toggle("hidden");
+              document.querySelector(".open").classList.toggle("hidden");
+              document.querySelector(".close").classList.toggle("hidden");
+            });
+          });
+
+          if (window.location.toString().endsWith("contact.html")) {
+            document
+              .querySelectorAll(".contact-nav-text")
+              .forEach((el) => (el.style.color = "#00672E"));
+          }
+        });
+        loadComponents("footer", "./footer.html");
+      };
+    </script>
   </head>
   <body class="font-outfit">
+    <div id="navBar"></div>
     <div
-      class="grid px-4 pt-8 text-[#00672E] max-md:text-xl md:grid-cols-2 md:gap-32 md:px-16 md:text-[24px] lg:gap-48 lg:px-20 lg:text-[37px] 2xl:gap-56 2xl:px-36 2xl:text-[43px]"
+      class="grid px-4 py-56 text-[#00672E] max-md:text-xl md:grid-cols-2 md:gap-32 md:px-16 md:text-[24px] lg:gap-48 lg:px-20 lg:text-[37px] 2xl:gap-56 2xl:px-36 2xl:text-[43px]"
     >
       <div class="grid gap-5">
         <div>
@@ -68,5 +98,6 @@
         </svg>
       </div>
     </div>
+    <div id="footer" class="p-10 pt-20 text-[#00672E]"></div>
   </body>
 </html>
