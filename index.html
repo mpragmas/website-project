@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap"
+      rel="stylesheet"
+    />
+
   </head>
   <script>
     const loadComponents = (id, url, callback) => {
@@ -31,14 +35,13 @@
       loadComponents("contact", "src/section/contact.html");
       loadComponents("about", "src/section/about.html");
       loadComponents("footer", "src/section/footer.html");
+      loadComponents("private", "src/section/private.html");
     };
   </script>
-  <body class="bg-[#EFECEA]">
+  <body class="bg-gg">
     <div id="navBar"></div>
-    <div id="header"></div>
     <div id="hero"></div>
-    <div id="contact"></div>
     <div id="about"></div>
-    <div id="footer"></div>
+    <div id="footer" class="translate-y-[50px] p-7"></div>
   </body>
 </html>

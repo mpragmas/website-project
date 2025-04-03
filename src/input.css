@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 @theme {
-    --font-out: 'Outfit', sans-serif;
+  --breakpoint-tablet: 834px;
+  --breakpoint-desktop: 1512px;
+  --color-privacy-primary: #00672e;
+  --font-outfit: "Outfit", sans-serif;
+  --color-gg: rgba(239, 236, 234, 1);
 }
