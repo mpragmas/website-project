@@ -26,8 +26,63 @@
             document.querySelector(".nav-ui").classList.toggle("hidden");
             document.querySelector(".open").classList.toggle("hidden");
             document.querySelector(".close").classList.toggle("hidden");
+            document
+              .querySelector(".scroll-navbar")
+              .scrollIntoView({ behavior: "smooth", block: "center" });
           });
         });
+
+        const scrollToPageForMobile = (el, scrollTo, area = "start") => {
+          document.querySelector(el).addEventListener("click", () => {
+            document.querySelector(".nav-ui").classList.toggle("hidden");
+            document.querySelector(".open").classList.toggle("hidden");
+            document.querySelector(".close").classList.toggle("hidden");
+            document.querySelector(scrollTo).scrollIntoView({
+              behavior: "smooth",
+              block: area,
+            });
+          });
+        };
+        scrollToPageForMobile(".about--link-mob", ".scroll-about");
+        scrollToPageForMobile(
+          ".services--link-mob",
+          ".scroll-services",
+          "center",
+        );
+        scrollToPageForMobile(".references--link-mob", ".scroll-references");
+
+        // -------
+        const scrollToPage = (el, scrollTo, area = "start") => {
+          document.querySelector(el).addEventListener("click", () => {
+            document.querySelector(scrollTo).scrollIntoView({
+              behavior: "smooth",
+              block: area,
+            });
+          });
+        };
+        scrollToPage(".about--link", ".scroll-about");
+        scrollToPage(".services--link", ".scroll-services", "center");
+        scrollToPage(".references--link", ".scroll-references");
+
+        // document.querySelector(".about--link").addEventListener("click", () => {
+        //   document
+        //     .querySelector(".scroll-about")
+        //     .scrollIntoView({ behavior: "smooth" });
+        // });
+        // document
+        //   .querySelector(".services--link")
+        //   .addEventListener("click", () => {
+        //     document
+        //       .querySelector(".scroll-services")
+        //       .scrollIntoView({ behavior: "smooth" });
+        //   });
+        // document
+        //   .querySelector(".references--link")
+        //   .addEventListener("click", () => {
+        //     document
+        //       .querySelector(".scroll-references")
+        //       .scrollIntoView({ behavior: "smooth" });
+        //   });
       });
       loadComponents("header", "src/section/header.html");
       loadComponents("hero", "src/section/hero.html");

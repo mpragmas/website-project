@@ -280,6 +280,9 @@
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
@@ -369,6 +372,9 @@
   }
   .transform {
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
+  }
+  .cursor-pointer {
+    cursor: pointer;
   }
   .resize {
     resize: both;

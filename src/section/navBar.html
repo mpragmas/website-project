@@ -16,25 +16,29 @@
     <img src="../../img/navImg2.png " class="open nav-btn hidden" />
     <img src="../../img/close.png " class="close nav-btn hidden" />
     <ul class="contact-nav-text hidden flex-col font-medium text-black lg:flex">
-      <li>
-        <a href="#about"> About </a>
+      <li class="about--link cursor-pointer">
+        <!-- <a href="#about"> About </a> -->
+        <a> About </a>
       </li>
-      <li>Services</li>
-      <li>References</li>
+      <li class="services--link cursor-pointer">Services</li>
+      <li class="references--link cursor-pointer">References</li>
       <li><a href="./src/section/contact.html">contact</a></li>
     </ul>
   </div>
 </div>
 
-<div class="nav-ui hidden">
+<div class="nav-ui scroll-navbar hidden">
   <div class="relative z-50 mt-36 transition duration-500 lg:hidden">
     <ul
       class="relative z-30 flex flex-col gap-10 text-center text-2xl font-bold text-[#00672E]"
     >
-      <li>About</li>
-      <li>Services</li>
-      <li>References</li>
-      <li><a href="/website-project/src/section/contact.html">contact</a></li>
+      <li class="about--link-mob cursor-pointer">
+        <!-- <a href="#about"> About </a> -->
+        About
+      </li>
+      <li class="services--link-mob cursor-pointer">Services</li>
+      <li class="references--link-mob cursor-pointer">References</li>
+      <li><a href="./src/section/contact.html">contact</a></li>
     </ul>
     <div class="absolute top-[230px] z-0 w-screen -translate-y-[30px]">
       <img src="../../img/backimg.png" class="w-full" />
