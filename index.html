@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap"
       rel="stylesheet"
     />
+
   </head>
   <script>
     const loadComponents = (id, url, callback) => {
@@ -32,15 +33,15 @@
       loadComponents("header", "src/section/header.html");
       loadComponents("hero", "src/section/hero.html");
       loadComponents("contact", "src/section/contact.html");
+      loadComponents("about", "src/section/about.html");
       loadComponents("footer", "src/section/footer.html");
       loadComponents("private", "src/section/private.html");
     };
   </script>
   <body class="bg-gg">
     <div id="navBar"></div>
-    <div id="header"></div>
     <div id="hero"></div>
-    <div id="private"></div>
+    <div id="about"></div>
     <div id="footer" class="translate-y-[50px] p-7"></div>
   </body>
 </html>
