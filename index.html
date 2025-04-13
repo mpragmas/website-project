@@ -4,32 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <script>
-    const loadComponents = (id, url) => {
+    const loadComponents = (id, url, callback) => {
       fetch(url)
         .then((response) => response.text())
         .then((html) => {
           document.getElementById(id).innerHTML = html;
+          if (callback) callback();
         });
     };
 
     window.onload = () => {
-      loadComponents("navBar", "src/section/navBar.html");
+      loadComponents("navBar", "src/section/navBar.html", () => {
+        const toogleNavBtn = () => {
+          document.querySelector(".nav-ui").classList.toggle("hidden");
+          document.querySelector(".open").classList.toggle("hidden");
+          document.querySelector(".close").classList.toggle("hidden");
+        };
+        document.querySelectorAll(".nav-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            toogleNavBtn();
+            document
+              .querySelector(".scroll-navbar")
+              .scrollIntoView({ behavior: "smooth", block: "center" });
+          });
+        });
+
+        const scrollToPageForMobile = (el, scrollTo, area = "start") => {
+          document.querySelector(el).addEventListener("click", () => {
+            toogleNavBtn();
+            document.querySelector(scrollTo).scrollIntoView({
+              behavior: "smooth",
+              block: area,
+            });
+          });
+        };
+        scrollToPageForMobile(".about--link-mob", ".scroll-about");
+        scrollToPageForMobile(
+          ".services--link-mob",
+          ".scroll-services",
+          "center",
+        );
+        scrollToPageForMobile(".references--link-mob", ".scroll-references");
+
+        // -------
+        const scrollToPageForLarge = (el, scrollTo, area = "start") => {
+          document.querySelector(el).addEventListener("click", () => {
+            document.querySelector(scrollTo).scrollIntoView({
+              behavior: "smooth",
+              block: area,
+            });
+          });
+        };
+        scrollToPageForLarge(".about--link", ".scroll-about");
+        scrollToPageForLarge(".services--link", ".scroll-services", "center");
+        scrollToPageForLarge(".references--link", ".scroll-references");
+      });
       loadComponents("header", "src/section/header.html");
       loadComponents("hero", "src/section/hero.html");
-      loadComponents("contact", "src/section/contact.html");
       loadComponents("about", "src/section/about.html");
       loadComponents("footer", "src/section/footer.html");
+      loadComponents("private", "src/section/private.html");
     };
   </script>
-  <body>
+  <body class="bg-gg">
     <div id="navBar"></div>
-    <div id="header"></div>
     <div id="hero"></div>
-    <div id="contact"></div>
     <div id="about"></div>
-    <div id="footer"></div>
+    <div id="footer" class="translate-y-[50px] p-2 md:p-7"></div>
   </body>
 </html>
