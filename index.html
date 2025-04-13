@@ -21,11 +21,14 @@
 
     window.onload = () => {
       loadComponents("navBar", "src/section/navBar.html", () => {
+        const toogleNavBtn = () => {
+          document.querySelector(".nav-ui").classList.toggle("hidden");
+          document.querySelector(".open").classList.toggle("hidden");
+          document.querySelector(".close").classList.toggle("hidden");
+        };
         document.querySelectorAll(".nav-btn").forEach((btn) => {
           btn.addEventListener("click", () => {
-            document.querySelector(".nav-ui").classList.toggle("hidden");
-            document.querySelector(".open").classList.toggle("hidden");
-            document.querySelector(".close").classList.toggle("hidden");
+            toogleNavBtn();
             document
               .querySelector(".scroll-navbar")
               .scrollIntoView({ behavior: "smooth", block: "center" });
@@ -34,9 +37,7 @@
 
         const scrollToPageForMobile = (el, scrollTo, area = "start") => {
           document.querySelector(el).addEventListener("click", () => {
-            document.querySelector(".nav-ui").classList.toggle("hidden");
-            document.querySelector(".open").classList.toggle("hidden");
-            document.querySelector(".close").classList.toggle("hidden");
+            toogleNavBtn();
             document.querySelector(scrollTo).scrollIntoView({
               behavior: "smooth",
               block: area,
@@ -52,7 +53,7 @@
         scrollToPageForMobile(".references--link-mob", ".scroll-references");
 
         // -------
-        const scrollToPage = (el, scrollTo, area = "start") => {
+        const scrollToPageForLarge = (el, scrollTo, area = "start") => {
           document.querySelector(el).addEventListener("click", () => {
             document.querySelector(scrollTo).scrollIntoView({
               behavior: "smooth",
@@ -60,33 +61,12 @@
             });
           });
         };
-        scrollToPage(".about--link", ".scroll-about");
-        scrollToPage(".services--link", ".scroll-services", "center");
-        scrollToPage(".references--link", ".scroll-references");
-
-        // document.querySelector(".about--link").addEventListener("click", () => {
-        //   document
-        //     .querySelector(".scroll-about")
-        //     .scrollIntoView({ behavior: "smooth" });
-        // });
-        // document
-        //   .querySelector(".services--link")
-        //   .addEventListener("click", () => {
-        //     document
-        //       .querySelector(".scroll-services")
-        //       .scrollIntoView({ behavior: "smooth" });
-        //   });
-        // document
-        //   .querySelector(".references--link")
-        //   .addEventListener("click", () => {
-        //     document
-        //       .querySelector(".scroll-references")
-        //       .scrollIntoView({ behavior: "smooth" });
-        //   });
+        scrollToPageForLarge(".about--link", ".scroll-about");
+        scrollToPageForLarge(".services--link", ".scroll-services", "center");
+        scrollToPageForLarge(".references--link", ".scroll-references");
       });
       loadComponents("header", "src/section/header.html");
       loadComponents("hero", "src/section/hero.html");
-      // loadComponents("contact", "src/section/contact.html");
       loadComponents("about", "src/section/about.html");
       loadComponents("footer", "src/section/footer.html");
       loadComponents("private", "src/section/private.html");

@@ -419,12 +419,6 @@
   .bg-\[url\(\'\/src\/section\/rectangle_three\.png\'\)\] {
     background-image: url('/src/section/rectangle_three.png');
   }
-  .bg-\[url\(\'rectangle_three\.png\'\)\] {
-    background-image: url('rectangle_three.png');
-  }
-  .bg-\[url\(\'src\/section\/rectangle_three\.png\'\)\] {
-    background-image: url('src/section/rectangle_three.png');
-  }
   .bg-cover {
     background-size: cover;
   }
@@ -464,17 +458,11 @@
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
   }
-  .py-32 {
-    padding-block: calc(var(--spacing) * 32);
-  }
   .py-56 {
     padding-block: calc(var(--spacing) * 56);
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
-  }
-  .pt-8 {
-    padding-top: calc(var(--spacing) * 8);
   }
   .pt-20 {
     padding-top: calc(var(--spacing) * 20);
@@ -484,9 +472,6 @@
   }
   .pt-28 {
     padding-top: calc(var(--spacing) * 28);
-  }
-  .pt-32 {
-    padding-top: calc(var(--spacing) * 32);
   }
   .pt-56 {
     padding-top: calc(var(--spacing) * 56);
@@ -577,6 +562,9 @@
   }
   .text-\[\#00672E\] {
     color: #00672E;
+  }
+  .text-\[\#00672e\] {
+    color: #00672e;
   }
   .text-black {
     color: var(--color-black);

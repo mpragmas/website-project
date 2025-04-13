@@ -22,6 +22,9 @@
               document.querySelector(".nav-ui").classList.toggle("hidden");
               document.querySelector(".open").classList.toggle("hidden");
               document.querySelector(".close").classList.toggle("hidden");
+              document
+                .querySelector(".scroll-navbar")
+                .scrollIntoView({ behavior: "smooth", block: "center" });
             });
           });
 
@@ -29,6 +32,8 @@
             document
               .querySelectorAll(".contact-nav-text")
               .forEach((el) => (el.style.color = "#00672E"));
+
+            console.log(document.querySelectorAll(".navb"));
           }
         });
         loadComponents("footer", "./footer.html");
